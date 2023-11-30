@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Módulo PIX</title>
+</head>
+<body>
+    <div id="pix-section">
+        <h2>Módulo PIX</h2>
+
+        <div id="cadastro-remocao-chaves">
+            <form action="cadastra_pix.php" method="post">
+                <h4>Cadastro/Remoção de Chaves PIX</h4>
+                
+                <label for="chave_pix_cadastro">Chave PIX:</label>
+                <input type="text" id="chave_pix_cadastro" name="chave_pix_cadastro">
+
+                <button type="submit" name="action" value="cadastrar_chave">Cadastrar Chave</button>
+            </form>
+            <br>
+            <form action="remove_pix.php" method="post">
+                <label for="chave_pix_remocao">Chave PIX:</label>
+                <input type="text" id="chave_pix_remocao" name="chave_pix_remocao">
+
+                <button type="submit" name="action" value="remover_chave">Remover Chave</button>
+            </form>
+        </div>
+
+        <div id="listagem-chaves">
+            <h3>Listagem de Chaves Cadastradas</h3>
+        
+            <form action="listagem_chaves_cadastradas.php" method="post">
+                <label for="usuario-id-chaves">ID do Usuário:</label>
+                <input type="text" id="usuario-id-chaves" name="usuario_id" required>
+                <button type="submit">Listar Chaves Cadastradas</button>
+            </form>
+        
+            <div id="chaves-cadastradas-listagem">
+            </div>
+        </div>
+        
+        <div id="enviar-pix">
+            <h3>Transação Enviar PIX</h3>
+        
+            <form action="enviar_pix.php" method="post">
+                <label for="valor_envio">Valor:</label>
+                <input type="number" id="valor_envio" name="valor_envio" required>
+        
+                <label for="chave_destino">Chave PIX do Destino:</label>
+                <input type="text" id="chave_destino" name="chave_destino" required>
+
+                <button type="submit">Enviar PIX</button>
+            </form>
+        </div>
+
+        <div id="listagem-favoritos">
+            <h3>Listagem de Favoritos</h3>
+
+            <form action="listagem_pix_favoritos.php" method="post">
+                <label for="usuario-id">ID do Usuário:</label>
+                <input type="text" id="usuario-id" name="usuario_id" required>
+                <button type="submit">Listar Favoritos</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
